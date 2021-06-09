@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1608399337 source:e:\mayesha doc\c programming\academic\igraphics-master\igraphics-master\dxball.cpp
+	"iGraphics.h"
+	"gl.h"
+	<windows.h>
+	<string.h>
+	<stdlib.h>
+
+1608026803 e:\mayesha doc\c programming\academic\igraphics-master\igraphics-master\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"glut.h"
+	<time.h>
+	<math.h>
+	"glaux.h"
+
+1602924652 e:\mayesha doc\c programming\academic\igraphics-master\igraphics-master\opengl\include\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1602924652 e:\mayesha doc\c programming\academic\igraphics-master\igraphics-master\opengl\include\glaux.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1602924652 e:\mayesha doc\c programming\academic\igraphics-master\igraphics-master\opengl\include\gl.h
+
+1608404279 source:e:\mayesha doc\1905103\dxball.cpp
+	"iGraphics.h"
+	"gl.h"
+	<windows.h>
+	<string.h>
+	<stdlib.h>
+
+1608026803 e:\mayesha doc\1905103\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"glut.h"
+	<time.h>
+	<math.h>
+	"glaux.h"
+
+1602924652 e:\mayesha doc\1905103\opengl\include\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1602924652 e:\mayesha doc\1905103\opengl\include\glaux.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1602924652 e:\mayesha doc\1905103\opengl\include\gl.h
+
