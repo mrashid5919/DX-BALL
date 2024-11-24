@@ -80,7 +80,7 @@ struct hall_of_fame
 
 struct hall_of_fame hof[15];
 
-char button[10][20]={"Resume.BMP","Newgame.BMP","Highscores.BMP","Quit.BMP"};
+char button[10][50]={"Images/Resume.BMP","Images/Newgame.BMP","Images/Highscores.BMP","Images/Quit.BMP"};
 
 int red=0;
 int green=0;
@@ -107,9 +107,9 @@ void drawTextBox()
 
 void restart()
 {
-    PlaySound("Beethoven - Für Elise.wav",NULL,SND_ASYNC);
+    PlaySound("Music/Beethoven - Fï¿½r Elise.wav",NULL,SND_ASYNC);
     FILE *fr;
-    fr=fopen("Position.txt","rb");
+    fr=fopen("Images/Position.txt","rb");
     fread(&x,sizeof(x),1,fr);
     fread(&y,sizeof(y),1,fr);
     fread(&dx,sizeof(dx),1,fr);
@@ -140,7 +140,7 @@ void restart()
 
 void ng()
 {
-    PlaySound("Beethoven - Für Elise.wav",NULL,SND_ASYNC);
+    PlaySound("Music/Beethoven - Fï¿½r Elise.wav",NULL,SND_ASYNC);
     x=(double)screenwidth/2;
     y=base;
     dx=3.0;
@@ -370,9 +370,9 @@ void drop()
 void cursor()
 {
     if(bstate==0)
-        iShowBMP2(bx-10,by,"Board.BMP",0x000000);
+        iShowBMP2(bx-10,by,"Images/Board.BMP",0x000000);
     else
-        iShowBMP2(lbx-18,by,"Longboard.BMP",0x000000);
+        iShowBMP2(lbx-18,by,"Images/Longboard.BMP",0x000000);
 }
 
 void definebricks()
@@ -451,7 +451,7 @@ void definebp()
 
 void homepage()
 {
-    iShowBMP(0,0,"Homepage.BMP");
+    iShowBMP(0,0,"Images/Homepage.BMP");
     for(int i=0;i<4;i++)
     {
         iShowBMP2(bcoordinate[i].x,bcoordinate[i].y,button[i],0);
@@ -488,8 +488,8 @@ void lp()
 
 void showhighscore()
 {
-    PlaySound("Intro.wav",NULL,SND_ASYNC);
-    iShowBMP(0,0,"HOF.BMP");
+    PlaySound("Music/Intro.wav",NULL,SND_ASYNC);
+    iShowBMP(0,0,"Images/HOF.BMP");
     fptr = fopen("Highscore.txt", "rb");
     for(int i=0; i<10; i++)
     {
@@ -530,7 +530,7 @@ void showl()
         {
             if(lc[i].sh==1)
             {
-                iShowBMP2(lc[i].x,lc[i].y,"Life.BMP",0);
+                iShowBMP2(lc[i].x,lc[i].y,"Images/Life.BMP",0);
             }
         }
     }
@@ -565,7 +565,7 @@ void timedisplay()
 
 void over()
 {
-    iShowBMP2(0,0,"gameover.BMP",0x000000);
+    iShowBMP2(0,0,"Images/gameover.BMP",0x000000);
     //itoa(score,sc,10);
     showscore();
     iSetColor(0,255,255);
@@ -576,7 +576,7 @@ void over()
 
 void win()
 {
-    iShowBMP(0,0,"Win.BMP");
+    iShowBMP(0,0,"Images/Win.BMP");
     iSetColor(0,255,255);
     iFilledRectangle(620,540,160,50);
     iSetColor(0,0,0);
@@ -598,18 +598,18 @@ void iDraw()
     }
     else if(st==1)
     {
-        iShowBMP(0,0,"Bg.BMP");
+        iShowBMP(0,0,"Images/Bg.BMP");
         if(pshow==1)
         {
-            iShowBMP(px,py-30,"Lifegain.BMP");
+            iShowBMP(px,py-30,"Images/Lifegain.BMP");
         }
         if(pshow2==1)
         {
-            iShowBMP(px2,py2-30,"Longpaddle.BMP");
+            iShowBMP(px2,py2-30,"Images/Longpaddle.BMP");
         }
         if(pshow3==1)
         {
-            iShowBMP(px3,py3-30,"Fastball.BMP");
+            iShowBMP(px3,py3-30,"Images/Fastball.BMP");
         }
         buildbricks();
         cursor();
@@ -629,7 +629,7 @@ void iDraw()
     }
     else if(st==5)
     {
-        PlaySound("Intro.wav",NULL,SND_ASYNC);
+        PlaySound("Music/Intro.wav",NULL,SND_ASYNC);
         showhighscore();
     }
     else if(st==6)
@@ -651,7 +651,7 @@ void iDraw()
     }
     else if(st==7)
     {
-        iShowBMP(0,0,"Inst1.BMP");
+        iShowBMP(0,0,"Images/Inst1.BMP");
         iSetColor(0,255,255);
         iFilledRectangle(620,540,160,50);
         iSetColor(0,0,0);
@@ -659,7 +659,7 @@ void iDraw()
     }
     else if(st==8)
     {
-        iShowBMP(0,0,"Inst2.BMP");
+        iShowBMP(0,0,"Images/Inst2.BMP");
         iSetColor(0,255,255);
         iFilledRectangle(620,540,160,50);
         iSetColor(0,0,0);
@@ -667,7 +667,7 @@ void iDraw()
     }
     else if(st==9)
     {
-        iShowBMP(0,0,"Inst3.BMP");
+        iShowBMP(0,0,"Images/Inst3.BMP");
         iSetColor(0,255,255);
         iFilledRectangle(620,540,160,50);
         iSetColor(0,0,0);
@@ -742,7 +742,7 @@ void iKeyboard(unsigned char key)
         case 'm':
         {
                 st=2;
-                PlaySound("Intro.wav",NULL,SND_ASYNC);
+                PlaySound("Music/Intro.wav",NULL,SND_ASYNC);
                 break;
         }
         }
@@ -847,7 +847,7 @@ void iMouse(int button, int state, int mx, int my)
             if(st==0)
             {
                 st=1;
-                PlaySound("Beethoven - Für Elise.wav",NULL,SND_ASYNC);
+                PlaySound("Music/Beethoven - Fï¿½r Elise.wav",NULL,SND_ASYNC);
             }
             else if(st==2)
             {
@@ -875,7 +875,7 @@ void iMouse(int button, int state, int mx, int my)
         {
             if(st==2 || st==0)
             {
-                PlaySound("Intro.wav",NULL,SND_ASYNC);
+                PlaySound("Music/Intro.wav",NULL,SND_ASYNC);
                 st=5;
             }
         }
@@ -915,7 +915,7 @@ void iMouse(int button, int state, int mx, int my)
                 }
                 fclose(fh);
                 st=2;
-                PlaySound("Intro.wav",NULL,SND_ASYNC);
+                PlaySound("Music/Intro.wav",NULL,SND_ASYNC);
                 iPauseTimer(0);
             }
         }
@@ -957,7 +957,7 @@ int main()
     lp();
     str[0]=0;
     if(st==0)
-        PlaySound("Intro.wav",NULL,SND_ASYNC);
+        PlaySound("Music/Intro.wav",NULL,SND_ASYNC);
     iInitialize(screenwidth, screenheight, "DX-BALL");
     return 0;
 }
